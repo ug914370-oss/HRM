@@ -1,3 +1,7 @@
+/* ============================================
+   CRYPTOVAULT - COMPLETE CSS STYLESHEET
+   ============================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,325 +9,522 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+.container {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page {
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   LOGIN PAGE STYLES
+   ============================================ */
+
+.login-container {
+    background: rgba(20, 20, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 200, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.logo-section {
     text-align: center;
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
+.logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #00ffcc 0%, #00cc99 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #0f0f1e;
 }
 
-.form-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
 }
 
-.form-section h2 {
-    margin-bottom: 1.5rem;
-    color: #333;
-    border-bottom: 2px solid #667eea;
-    padding-bottom: 0.5rem;
-}
-
-#employee-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+.subtitle {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 20px;
 }
 
-.form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #555;
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin-bottom: 8px;
 }
 
-.form-group input,
-.form-group select {
-    padding: 0.75rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.form-buttons {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
+input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
     transition: all 0.3s ease;
 }
 
-#submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 255, 200, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.2);
 }
 
-#submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
-}
-
-#cancel-btn {
-    background: #6c757d;
-    color: white;
-}
-
-#cancel-btn:hover {
-    background: #5a6268;
-}
-
-.search-section {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-controls {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 1rem;
-    align-items: center;
-}
-
-#search-input,
-#department-filter,
-#status-filter {
-    padding: 0.75rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.employee-list-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.employee-list-section h2 {
-    margin-bottom: 1rem;
-    color: #333;
-    border-bottom: 2px solid #667eea;
-    padding-bottom: 0.5rem;
-}
-
-.employee-stats {
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: #667eea;
-}
-
-.table-container {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th,
-td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    font-weight: 600;
-    position: sticky;
-    top: 0;
-}
-
-tr:hover {
-    background-color: #f8f9fa;
-}
-
-.btn-edit {
-    background: #28a745;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: 0.875rem;
-}
-
-.btn-edit:hover {
-    background: #218838;
-}
-
-.btn-delete {
-    background: #dc3545;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 3px;
-    font-size: 0.875rem;
-}
-
-.btn-delete:hover {
-    background: #c82333;
-}
-
-.status-active {
-    background: #d4edda;
-    color: #155724;
-    padding: 0.25rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.875rem;
-}
-
-.status-inactive {
-    background: #f8d7da;
-    color: #721c24;
-    padding: 0.25rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.875rem;
-}
-
-.status-on-leave {
-    background: #fff3cd;
-    color: #856404;
-    padding: 0.25rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.875rem;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.modal-content h3 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.modal-content p {
-    margin-bottom: 2rem;
+input::placeholder {
     color: #666;
 }
 
-.modal-buttons {
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #00ffcc 0%, #00cc99 100%);
+    color: #0f0f1e;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 255, 200, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.credentials-box {
+    background: rgba(0, 255, 200, 0.05);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+.credentials-box strong {
+    color: #00ffcc;
+}
+
+.error {
+    background: rgba(255, 50, 50, 0.1);
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    color: #ff6b6b;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.error.show {
+    display: block;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* ============================================
+   DASHBOARD PAGE STYLES
+   ============================================ */
+
+.dashboard-header {
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user-info {
+    font-size: 13px;
+    color: #888;
+}
+
+.logout-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 12px;
+    background: rgba(255, 50, 50, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 50, 50, 0.3);
+}
+
+.balance-card {
+    background: linear-gradient(135deg, rgba(0, 255, 200, 0.1) 0%, rgba(0, 200, 150, 0.05) 100%);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.balance-label {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.balance-amount {
+    font-size: 48px;
+    font-weight: 700;
+    color: #00ffcc;
+    margin-bottom: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+.balance-crypto {
+    font-size: 12px;
+    color: #666;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.action-btn {
+    padding: 15px;
+    background: rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    color: #00ffcc;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(0, 255, 200, 0.2);
+    border-color: rgba(0, 255, 200, 0.4);
+}
+
+.transactions {
+    background: rgba(20, 20, 35, 0.5);
+    border: 1px solid rgba(0, 255, 200, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.transactions-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 255, 200, 0.05);
+    font-size: 13px;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-type {
+    color: #888;
+}
+
+.transaction-amount {
+    color: #00ffcc;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+/* ============================================
+   SEND PAGE STYLES
+   ============================================ */
+
+.form-container {
+    background: rgba(20, 20, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 200, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: #666;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 255, 200, 0.1);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    margin: 0 auto 5px;
+    font-weight: 600;
+    color: #00ffcc;
 }
 
-.btn-danger {
-    background: #dc3545;
-    color: white;
+.step.active .step-number {
+    background: linear-gradient(135deg, #00ffcc 0%, #00cc99 100%);
+    color: #0f0f1e;
 }
 
-.btn-danger:hover {
-    background: #c82333;
+.back-btn {
+    width: auto;
+    padding: 10px 20px;
+    background: rgba(100, 100, 150, 0.2);
+    color: #888;
+    border: 1px solid rgba(100, 100, 150, 0.3);
+    margin-bottom: 20px;
+    font-size: 13px;
 }
 
-.btn-secondary {
-    background: #6c757d;
-    color: white;
+.review-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 255, 200, 0.05);
+    font-size: 13px;
 }
 
-.btn-secondary:hover {
-    background: #5a6268;
+.review-item:last-child {
+    border-bottom: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
+.review-label {
+    color: #888;
+}
 
-    header h1 {
-        font-size: 2rem;
-    }
+.review-value {
+    color: #00ffcc;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
 
-    #employee-form {
-        grid-template-columns: 1fr;
-    }
+/* ============================================
+   RECEIPT PAGE STYLES
+   ============================================ */
 
-    .search-controls {
-        grid-template-columns: 1fr;
-    }
+.receipt-container {
+    background: rgba(20, 20, 35, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 200, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
 
-    .form-buttons {
-        flex-direction: column;
-    }
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00ffcc 0%, #00cc99 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    animation: scaleIn 0.5s ease;
+}
 
-    table {
-        font-size: 0.875rem;
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
     }
+    to {
+        transform: scale(1);
+    }
+}
 
-    th,
-    td {
-        padding: 0.5rem;
-    }
+.receipt-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.receipt-subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.receipt-details {
+    background: rgba(0, 255, 200, 0.05);
+    border: 1px solid rgba(0, 255, 200, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(0, 255, 200, 0.05);
+}
+
+.receipt-row:last-child {
+    border-bottom: none;
+}
+
+.receipt-row-label {
+    color: #888;
+}
+
+.receipt-row-value {
+    color: #00ffcc;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+.telegram-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #0088cc 0%, #0066aa 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.telegram-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
+}
+
+.done-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #00ffcc 0%, #00cc99 100%);
+    color: #0f0f1e;
+}
+
+.educational-note {
+    background: rgba(255, 200, 0, 0.1);
+    border: 1px solid rgba(255, 200, 0, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ffcc00;
+    line-height: 1.5;
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 255, 200, 0.2);
+    border-top-color: #00ffcc;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   END OF CSS
+   ============================================ */
+
+   
 }
